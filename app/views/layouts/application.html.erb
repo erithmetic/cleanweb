@@ -2,12 +2,17 @@
 <html>
 <head>
 <title>Energy GPA:<%= page_title %></title>
-<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= stylesheet_link_tag "application", :media => "all" %>
+
+<%= stylesheet_link_tag "960grid/reset", :media => "all" %>
+<%= stylesheet_link_tag "960grid/960", :media => "all" %>
+<%= stylesheet_link_tag "960grid/text", :media => "all" %>
+
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="container">
+<div id="container" class="container_16 clearfix">
 	<header>
 		<div id="logo"><img src="images/logo.png" /></div>
 		<div id="search"><form><input type="text" name="search-terms"/></form></div>
