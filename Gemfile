@@ -4,8 +4,11 @@ gem 'rails', '3.2.0'
 
 gem 'crack'
 gem 'devise'
+gem 'high_voltage'
+gem 'oauth'
+gem 'omniauth-facebook'
+gem 'omniauth-oauth'
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -35,7 +38,7 @@ group :mac do
 end
 
 group :test do
-  gem 'capybara-webkit'
+  gem 'capybara'
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
