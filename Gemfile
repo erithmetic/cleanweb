@@ -4,11 +4,11 @@ gem 'rails', '3.2.0'
 
 gem 'crack'
 gem 'devise'
+gem 'draper'
 gem 'high_voltage'
 gem 'oauth'
 gem 'omniauth-facebook'
 gem 'omniauth-oauth'
-gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -49,5 +49,6 @@ group :test do
   gem 'guard-rspec'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'sqlite3'
   gem 'vcr', '~> 2.0.0.rc1'
 end
