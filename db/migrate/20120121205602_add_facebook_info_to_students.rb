@@ -5,5 +5,6 @@ class AddFacebookInfoToStudents < ActiveRecord::Migration
     add_column :students, :city, :string
     add_column :students, :state, :string
     add_column :students, :zip, :string
+    add_column :students, :facebook_avatar_url, :string
   end
 end
