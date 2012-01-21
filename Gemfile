@@ -5,10 +5,12 @@ gem 'rails', '3.2.0'
 gem 'crack'
 gem 'devise'
 gem 'draper'
+gem 'formtastic'
 gem 'high_voltage'
 gem 'oauth'
 gem 'omniauth-facebook'
 gem 'omniauth-oauth'
+gem 'paperclip'
 
 # Gems used only for assets and not required
 # in production environments by default.
