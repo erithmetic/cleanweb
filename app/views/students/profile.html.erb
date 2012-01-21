@@ -1,0 +1,16 @@
+<h1>Welcome <%= name %>!</h1>
+<div id="student-info"  class="box">
+	<div class="left"><img id="avatar" src="<%= @student.avatar.url(:small) %>" /></div>
+	<ul class="stats">
+		<li id="stats-gas" class="expandable">
+			<!-- personal Gas usage stats -->
+		</li>
+		<li id="stats-gas" class="expandable">
+			<!-- personal Electricity usage stats -->
+		</li>
+		<li id="stats-gas" class="expandable">
+			<!-- personal Oil usage stats -->
+		</li>
+	</ul>
+</div>
+<div id="suggestions"> </div>
