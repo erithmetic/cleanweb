@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.0'
 
+gem 'aws-sdk'
 gem 'crack'
 gem 'devise'
 gem 'draper'
