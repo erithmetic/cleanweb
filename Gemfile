@@ -2,9 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'crack'
+gem 'devise'
 gem 'sqlite3'
 
 
@@ -20,19 +19,32 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development do
+  gem 'guard'
+  gem 'sqlite3'
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :mac do
+  gem 'growl'  # requires `brew install growlnotify`
+end
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :test do
+  gem 'capybara-webkit'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'fakeweb'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-cucumber'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'vcr', '~> 2.0.0.rc1'
+end
