@@ -2,13 +2,13 @@
 <div id="student-info"  class="box">
 	<div class="left"><img id="avatar" src="<%= @student.avatar.url(:small) %>" /></div>
 	<ul class="stats">
-		<li id="stats-gas" class="expandable">
+		<li id="stat-gas stat-<%= gasNumberMod10 %>" class="expandable">
 			<!-- personal Gas usage stats -->
 		</li>
-		<li id="stats-gas" class="expandable">
+		<li id="stat-electricity stat-<%= electricityNumberMod10 %>" class="expandable">
 			<!-- personal Electricity usage stats -->
 		</li>
-		<li id="stats-gas" class="expandable">
+		<li id="stat-oil stat-<%= oilNumberMod10 %>" class="expandable">
 			<!-- personal Oil usage stats -->
 		</li>
 	</ul>
