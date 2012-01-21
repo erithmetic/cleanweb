@@ -2,7 +2,8 @@
 
 <nav>
   <%= link_to 'Sign in with Facebook', student_omniauth_authorize_path(:facebook) %>
-  <%= link_to 'Sign in', '' %>
+  <%= link_to 'Sign in', new_student_session_path %>
+  <%= link_to 'Sign up', new_student_registration_path %>
 </nav>
 
 	<ul class="stats">
