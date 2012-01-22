@@ -1,19 +1,12 @@
 <h1>Welcome</h1>
-
-<nav>
-  <%= link_to 'Sign in with Facebook', student_omniauth_authorize_path(:facebook) %>
-  <%= link_to 'Sign in', new_student_session_path %>
-  <%= link_to 'Sign up', new_student_registration_path %>
-</nav>
-
-	<ul class="stats">
-		<li id="stats-gas" class="expandable">
-			<!-- average Gas usage stats -->
-		</li>
-		<li id="stats-gas" class="expandable">
-			<!-- average Electricity usage stats -->
-		</li>
-		<li id="stats-gas" class="expandable">
-			<!-- average Oil usage stats -->
-		</li>
-	</ul>
+<ul class="stats">
+  <li id="stats-gas" class="expandable">
+    <!-- average Gas usage stats -->
+  </li>
+  <li id="stats-electricity" class="expandable">
+    <!-- average Electricity usage stats -->
+  </li>
+  <li id="stats-oil" class="expandable">
+    <!-- average Oil usage stats -->
+  </li>
+</ul>
