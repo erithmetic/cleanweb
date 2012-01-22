@@ -5,6 +5,8 @@ class Student < ActiveRecord::Base
   has_many :exams, :through => :test_takers
   has_many :addresses
 
+  accepts_nested_attributes_for :addresses
+
   scope :celebrities, where(:celebrity => true)
 
 

@@ -35,6 +35,7 @@ class StudentsController < ApplicationController
   # GET /students/1/edit
   def edit
     @student = Student.find(params[:id])
+    @addresses = @student.addresses + [@student.addresses.build]
   end
 
   # POST /students

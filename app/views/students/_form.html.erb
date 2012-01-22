@@ -1,4 +1,11 @@
 <%= semantic_form_for(@student) do |f| %>
-  <%= f.inputs, :name, :avatar %>
-  <%= f.actions %>
+  <%= f.inputs :name, :avatar %>
+
+  <%= f.semantic_fields_for :addresses, :collection => @addresses do |a| %>
+    <%= a.input :name %>
+    <%= a.input :device_id, :label => 'Device ID' %>
+    <%= a.inputs :street, :city, :state, :zip %>
+  <% end %>
+
+  <%= f.buttons %>
 <% end %>
