@@ -14,7 +14,7 @@ gem 'oauth'
 gem 'omniauth-facebook'
 gem 'omniauth-oauth2'
 gem 'paperclip'
-gem 'vcr'
+gem 'vcr', '~> 2.0.0.rc1'
 
 # Gems used only for assets and not required
 # in production environments by default.
