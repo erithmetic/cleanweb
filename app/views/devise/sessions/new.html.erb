@@ -1,6 +1,7 @@
 <h2>Log in</h2>
 
 <%= link_to 'Log in with Facebook', student_omniauth_authorize_path(:facebook) %>
+<%= link_to 'Log in with Green Button', student_omniauth_authorize_path(:tendril) %>
 
 <%= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <%= f.input :email %>

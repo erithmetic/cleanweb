@@ -1,3 +1,5 @@
+require 'chronic'
+
 class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
@@ -25,6 +27,7 @@ class ExamsController < ApplicationController
   # GET /exams/new.json
   def new
     @exam = Exam.new
+    @exam.test_takers.build :student => current_student
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,6 +43,7 @@ class ExamsController < ApplicationController
   # POST /exams
   # POST /exams.json
   def create
+    params[:exam][:pencils_down_at] = Chronic.parse params[:exam][:pencils_down_at]
     @exam = Exam.new(params[:exam])
 
     respond_to do |format|

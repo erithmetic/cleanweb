@@ -5,6 +5,9 @@ class Student < ActiveRecord::Base
   has_many :exams, :through => :test_takers
   has_many :addresses
 
+  scope :celebrities, where(:celebrity => true)
+
+
   #devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 

@@ -1,4 +1,4 @@
-<%= form_for(@exam) do |f| %>
+<%= semantic_form_for(@exam) do |f| %>
   <% if @exam.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
@@ -11,15 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :winner_id %><br />
-    <%= f.number_field :winner_id %>
-  </div>
-  <div class="field">
-    <%= f.label :pencils_down_at %><br />
-    <%= f.datetime_select :pencils_down_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :pencils_down_at, :as => :string, :hint => 'e.g. "2/13/12" or "next week"', :label => 'Ends on' %>
+
+  <%= f.input :test_takers, :as => :check_boxes, :collection => Student.celebrities %>
+
+  <%= f.buttons %>
 <% end %>
