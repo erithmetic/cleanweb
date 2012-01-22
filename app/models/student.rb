@@ -108,6 +108,6 @@ class Student < ActiveRecord::Base
   end
 
   def electricity
-    1035
+    addresses.map(&:readings).flatten.sum(&:amount).to_i / 1000
   end
 end
