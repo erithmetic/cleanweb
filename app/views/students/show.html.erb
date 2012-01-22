@@ -1,6 +1,6 @@
 <% content_for :title do %>
 
-My Transcript
+<%= @student.name %>'s Transcript
 <% end %>
 <div class="blurb">
 	<h4>Welcome <%= @student.name %>!</h4>
@@ -21,6 +21,7 @@ My Transcript
 				<!-- personal Oil usage stats -->
 				Oil: <span class="stat"><%= @student.oil %></span> </li>
 		</ul>
+		<br clear="all" />
 	</div>
   <%= link_to 'Download from Tendril', tendrils_show_path %>
 	<table  class="stats">

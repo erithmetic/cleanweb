@@ -23,7 +23,7 @@ h1 {
 	text-align:center;
 }
 h2 {
-	font: 60px/68px 'MirageRegular', Arial, sans-serif;
+	font: 60px/68px 'ArmWrestlerBold','MirageRegular', Arial, sans-serif;
 	letter-spacing: 0;
 	text-align:center;
 }
@@ -140,8 +140,21 @@ li:hover img.avatar-sm {
 	float:none;
 	display:block;
 }
+.box{
+	background:#fff;
+	border:#2DB1ED 5px solid;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding:40px;
+	margin:5px 30px;
+}
 /*-----stats----*/
+.stat-numbers{
+	float:right;
+}
 .stat-numbers li{
+	font: 22px/32px 'BebasRegular', Arial, sans-serif;
+	padding:5px 10px;
 }
 span.stat{
 	font: 68px/72px 'SFSlapstickComicShadedOblique', Arial, sans-serif;
