@@ -28,7 +28,7 @@ h3 {
 	letter-spacing: 0;
 	text-align:center;
 }
-h4{
+h4 {
 	font: 22px/32px 'BebasRegular', Arial, sans-serif;
 }
 header {
@@ -43,16 +43,24 @@ header {
 #container {
 	position:relative;
 	padding:50px 0 0 0;
+	margin-left: auto;
+	margin-right: auto;
+	clear:both;
+	width: 960px;
 }
-#main{
+#main {
 	padding:20px 36px 36px 36px;
+	margin-left: auto;
+	margin-right: auto;
+	clear:both;
+	width: 960px;
 }
 #logo {
 	position:absolute;
 	top:10px;
 	left:10px;
 }
-body.home #logo, body.home h1 {
+body.home #logo, body.home h1, body.sign_in h1 {
 	display:none;
 	visibility:collapse;
 }
@@ -116,7 +124,9 @@ li:hover img.avatar-sm {
 	display:block;
 }
 /*-----stats----*/
-
+.stat-numbers li{
+	font: 68px/72px 'SFSlapstickComicShadedOblique', Arial, sans-serif;
+}
 /*-------gradients-------*/
 .white, .subnav li:hover {
 	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); /* FF3.6+ */
