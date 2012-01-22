@@ -6,7 +6,7 @@
 	<%= javascript_include_tag "stats" %>
 	<%= stylesheet_link_tag "visualize/visualize", :media => "all" %>
 	<%= stylesheet_link_tag "visualize/visualize-dark", :media => "all" %>
-<h1>Welcome <%= @student.name %>!</h1>
+<h3>Welcome <%= @student.name %>!</h3>
 <div id="student-info"  class="box">
 	<div class="left"><img id="avatar" src="<%= @student.avatar.url(:small) %>" /></div>
 		<ul class="stats">

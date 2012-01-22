@@ -14,7 +14,7 @@
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 </head>
-<body class="blue <%= page_title %>">
+<body class="blue page_id">
 <div id="container" class="container_16 clearfix white">
 	<header class="green">
 		<div id="logo"><a href="<%= page_path('home')%>"><img src="<%= image_path('logo.png') %>" alt="logo" /></a></div>
@@ -24,7 +24,7 @@
 				<% if current_student %>
 					<li><img class="avatar-sm" src="<%= current_student.avatar.url(:small) %>" alt="<%= current_student.name %>" />
 						<h4 class="student-name"><%= current_student.name %></h4>
-						<ul class="nav subnav shortcuts white">
+						<ul class="nav subnav shortcuts white" >
 							<li><%= link_to 'My Profile', current_student %></li>
 							<li><%= link_to 'My Exams', student_exams_path(current_student) %></li>
 							<li><%= link_to 'Logout', destroy_student_session_path %></li>
@@ -38,7 +38,10 @@
 			</ul>
 		</nav>
 	</header>
-	<div id="main white"> <%= yield %> </div>
+	<div id="main white"  style="background:url(<%= image_path('dots.png') %>) top left repeat-x;">
+		<h1><%= page_title %></h1>
+		<%= yield %>
+	</div>
 	<footer class="orange center">
 		<ul class="nav footer-nav">
 			<li>&copy; 2012 Energy GPA</li>
