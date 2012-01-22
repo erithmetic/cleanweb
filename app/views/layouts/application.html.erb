@@ -5,11 +5,13 @@
 <%= stylesheet_link_tag "960grid/reset", :media => "all" %>
 <%= stylesheet_link_tag "960grid/960", :media => "all" %>
 <!--<%= stylesheet_link_tag "960grid/text", :media => "all" %>-->
+<%= stylesheet_link_tag "fonts/slapstick/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/Magenta/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/ArmWrestler/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/bebas-neue/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/Bebas/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/Qlassik-Medium/stylesheet", :media => "all" %>
+
 <%= stylesheet_link_tag "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
@@ -40,12 +42,12 @@
 		</nav>
 	</header>
 	<div id="main white"  style="background:url(<%= image_path('dots.png') %>) top left repeat-x;">
-		<h1><%= page_title %></h1>
+		<h1><%= yield(:title) || '' %></h1>
 		<%= yield %>
 	</div>
 	<footer class="orange center">
 		<ul class="nav footer-nav">
-			<li>&copy; 2012 Energy GPA</li>
+			<li>&copy; 2012 Clean GPA</li>
 			<li><%= link_to 'Terms of Use', page_path('terms_of_use') %></a></li>
 			<li><%= link_to 'Contact Information', page_path('contact_information') %></li>
 		</ul>
