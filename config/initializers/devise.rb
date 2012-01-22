@@ -200,6 +200,7 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET']
       #:scope => 'email, offline_access', :client_options => { :ssl => {
         #:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt' } }
+  config.omniauth :tendril, ENV['TENDRIL_ID'], ENV['TENDRIL_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

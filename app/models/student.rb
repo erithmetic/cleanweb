@@ -60,6 +60,34 @@ class Student < ActiveRecord::Base
     end
   end
 
+  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
+    data = access_token.extra.raw_info
+    if student = Student.where(:email => data.email).first
+      student
+    else
+      Student.create!(:email => data.email, :password => Devise.friendly_token[0,20]) 
+    end
+  end
+
+  def self.find_for_tendril_oauth(access_token, signed_in_resource=nil)
+    data = access_token.extra.raw_info
+    if student = Student.where(:email => data.email).first
+      student
+    else
+      Student.create!(:email => data.email, :password => Devise.friendly_token[0,20]) 
+    end
+  end
+
+  def self.new_with_session(params, session)
+    super.tap do |student|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        student.email = data["email"]
+      elsif data = session["devise.tendril_data"] && session["devise.tendril_data"]["extra"]["raw_info"]
+        student.email = data["email"]
+      end
+    end
+  end
+
   def gas
     1022
   end
