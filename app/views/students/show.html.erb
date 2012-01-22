@@ -9,7 +9,7 @@
 		href="<%= edit_student_path(@student) %>"><img 
 		id="avatar" src="<%= @student.avatar.url(:small) %>" /></a><br />
 			<%= link_to 'Edit', edit_student_path(@student) %><br />
-      <span class="stat-title">Your GPA</span><br /> <span class="stat main-stat"><%= number_with_precision @student.gpa, :precision => 2 %></span></div>
+      <span class="stat-title">Your GPA</span><br /> <span class="stat main-stat"><%= @student.gpa ? number_with_precision(@student.gpa, :precision => 2) : 'N/A' %></span></div>
 		<ul class="stats-current stat-numbers">
 			<li id="stat-gas stat-<%= @student.gas %>" class="expandable">
 				<!-- personal Gas usage stats -->
