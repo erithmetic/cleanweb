@@ -12,6 +12,7 @@ class Student::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def tendril
+    puts request.env['omniauth.auth'].inspect
     @student = Student.find_for_tendril_oauth(request.env["omniauth.auth"], current_student)
 
     if @student.persisted?

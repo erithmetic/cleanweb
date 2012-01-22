@@ -76,10 +76,16 @@ class Student < ActiveRecord::Base
 
   def self.find_for_tendril_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
+    puts data.inspect
     if student = Student.where(:email => data.email).first
+      student.tendril_key = request.env['omniauth.auth']['client_id']
+      student.tendril_secret = request.env['omniauth.auth']['client_secret']
       student
     else
-      Student.create!(:email => data.email, :password => Devise.friendly_token[0,20]) 
+      Student.create!(:email => data.email, :password => Devise.friendly_token[0,20],
+        :tendril_key => data['client_id'],
+        :tendril_secret => data['client_secret']
+                     ) 
     end
   end
 
