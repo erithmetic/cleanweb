@@ -64,6 +64,9 @@ header {
 	top:10px;
 	left:10px;
 }
+#footer{
+	padding:5px 0 0 0;
+}
 body.home #logo, body.home h1, body.sign_in h1 {
 	display:none;
 	visibility:collapse;
@@ -71,6 +74,9 @@ body.home #logo, body.home h1, body.sign_in h1 {
 .boxes {
 	padding:72px 0 0 0;
 	color:#3c86ce;
+}
+.boxes li{
+	padding:215px 0 0 0;
 }
 .blurb{
 	padding:10px 30px 30px 30px;
