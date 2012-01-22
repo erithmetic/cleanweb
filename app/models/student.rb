@@ -1,6 +1,9 @@
 require 'cgi'
 
 class Student < ActiveRecord::Base
+  has_many :test_takers
+  has_many :exams, :through => :test_takers
+
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   Paperclip.interpolates(:remote_avatar_url) do |attachment, style|

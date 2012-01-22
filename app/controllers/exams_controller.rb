@@ -2,7 +2,7 @@ class ExamsController < ApplicationController
   # GET /exams
   # GET /exams.json
   def index
-    @exams = Exam.all
+    @exams = params[:student_id] ? Student.find(params[:student_id]).exams : Exam.limit(10)
 
     respond_to do |format|
       format.html # index.html.erb
