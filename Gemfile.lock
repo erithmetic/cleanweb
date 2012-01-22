@@ -141,9 +141,6 @@ GEM
       rack
     omniauth-facebook (1.2.0)
       omniauth-oauth2 (~> 1.0.0)
-    omniauth-oauth (1.0.0)
-      oauth
-      omniauth (~> 1.0)
     omniauth-oauth2 (1.0.0)
       oauth2 (~> 0.5.0)
       omniauth (~> 1.0)
@@ -256,7 +253,7 @@ DEPENDENCIES
   launchy
   oauth
   omniauth-facebook
-  omniauth-oauth
+  omniauth-oauth2
   paperclip
   pg
   rails (= 3.2.0)
@@ -264,4 +261,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
-  vcr (~> 2.0.0.rc1)
+  vcr

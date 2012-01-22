@@ -12,8 +12,9 @@ gem 'formtastic'
 gem 'high_voltage'
 gem 'oauth'
 gem 'omniauth-facebook'
-gem 'omniauth-oauth'
+gem 'omniauth-oauth2'
 gem 'paperclip'
+gem 'vcr'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -55,5 +56,5 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'sqlite3'
-  gem 'vcr', '~> 2.0.0.rc1'
+  #gem 'vcr', '~> 2.0.0.rc1'
 end
