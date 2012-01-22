@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120121211036) do
+ActiveRecord::Schema.define(:version => 20120122011129) do
+
+  create_table "exams", :force => true do |t|
+    t.integer  "winner_id"
+    t.datetime "pencils_down_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "students", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -39,6 +46,13 @@ ActiveRecord::Schema.define(:version => 20120121211036) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "test_takers", :force => true do |t|
+    t.integer  "student_id"
+    t.integer  "exam_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
