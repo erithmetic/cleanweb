@@ -4,7 +4,7 @@ gem 'rails', '3.2.0'
 
 gem 'aws-sdk'
 gem 'crack'
-gem 'devise', '2.0.0.rc'
+gem 'devise'
 gem 'draper'
 gem 'formtastic'
 gem 'high_voltage'
