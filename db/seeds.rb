@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+gates = Student.create :name => 'Bill Gates', :email => 'bill@gates.com'
+gates.addresses.create :street => '1835 73rd Ave NE', :city => 'Medina', :state => 'WA', :zip => 98039,
+  :gpa => 3.0
+
+mckibben = Student.create :name => 'Bill McKibben', :email => 'bill@middlebury.edu',
+mckibben.addresses.create :street => '123 Main St', :city => 'Middlebury', :state => 'VT', :zip => 05753,
+  :gpa => 4.0
+
+dick = Student.create :name => 'Dick Cheney', :email => 'dick@haliburton.com',
+dick.addresses.create :street => '123 Chain Bridge Rd', :city => 'McLean', :state => 'VA', :zip => 98039,
+  :gpa => 2.0
+dick.addresses.create :street => '123 Main St', :city => 'Jackson', :state => 'WY', :zip => 98039,
+  :gpa => 1.0

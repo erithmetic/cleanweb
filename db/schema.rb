@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120122022032) do
+ActiveRecord::Schema.define(:version => 20120122023726) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "student_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120122022032) do
     t.string   "zip"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.float    "gpa"
   end
 
   create_table "exams", :force => true do |t|
@@ -47,10 +48,6 @@ ActiveRecord::Schema.define(:version => 20120122022032) do
     t.datetime "created_at",                                            :null => false
     t.datetime "updated_at",                                            :null => false
     t.string   "name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
     t.string   "facebook_avatar_url"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
