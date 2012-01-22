@@ -59,4 +59,16 @@ class Student < ActiveRecord::Base
       self.email = omniauth['extra']['user_hash']['email']
     end
   end
+
+  def gas
+    1022
+  end
+
+  def oil
+    1013
+  end
+
+  def electricity
+    1035
+  end
 end
