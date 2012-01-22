@@ -11,7 +11,7 @@ gem 'high_voltage'
 gem 'oauth'
 gem 'omniauth-facebook'
 gem 'omniauth-oauth'
-gem 'paperclip'
+gem 'paperclip', '~> 2.4.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
