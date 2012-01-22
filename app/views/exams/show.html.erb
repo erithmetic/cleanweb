@@ -2,6 +2,8 @@
 <div class="blurb">
 <p id="notice"><%= notice %></p>
 
+<p><%= link_to 'Back to all my Exams', student_exams_path(current_student) %></p>
+
 <section style="margin: 20px 30%">
   <h2>Participants</h2>
   <% @exam.students.each do |student| %>
@@ -12,7 +14,7 @@
   <% end %>
 </section>
 
-<section style="clear: both;">
+<section style="clear: both;" class="winner">
   <% if @exam.winner_id %>
     <p>
       <b>Winner:</b>
