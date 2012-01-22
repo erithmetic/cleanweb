@@ -15,7 +15,7 @@
 	font: 18px/27px 'QlassikMediumRegular', Arial, sans-serif;
 }
 h1 {
-	font: 18px/27px 'ArmWrestlerBold', Arial, sans-serif;
+	font: 68px/72px 'ArmWrestlerBold', Arial, sans-serif;
 	text-align:center;
 }
 h2 {
@@ -28,6 +28,9 @@ h3 {
 	letter-spacing: 0;
 	text-align:center;
 }
+h4{
+	font: 22px/32px 'BebasRegular', Arial, sans-serif;
+}
 header {
 	position:absolute;
 	top:0;
@@ -39,14 +42,17 @@ header {
 }
 #container {
 	position:relative;
-	padding:72px 36px 36px 36px;
+	padding:50px 0 0 0;
+}
+#main{
+	padding:20px 36px 36px 36px;
 }
 #logo {
 	position:absolute;
 	top:10px;
 	left:10px;
 }
-body.Welcome #logo {
+body.home #logo, body.home h1 {
 	display:none;
 	visibility:collapse;
 }
