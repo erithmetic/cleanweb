@@ -3,6 +3,7 @@ require 'cgi'
 class Student < ActiveRecord::Base
   has_many :test_takers
   has_many :exams, :through => :test_takers
+  has_many :addresses
 
   #devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
