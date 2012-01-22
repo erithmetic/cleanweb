@@ -23,4 +23,9 @@ class Student::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_student_registration_url
     end
   end
+
+  def failure
+    puts "I DIED #{params.inspect}"
+    puts request.env.inspect
+  end
 end
