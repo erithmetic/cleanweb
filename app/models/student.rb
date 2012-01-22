@@ -108,7 +108,7 @@ class Student < ActiveRecord::Base
   end
 
   def electricity
-    addresses.map(&:readings).flatten.sum(&:amount).to_i * 3413
+    addresses.map(&:readings).flatten.sum(&:amount).to_i
   end
 
   def square_footage
@@ -116,7 +116,7 @@ class Student < ActiveRecord::Base
   end
 
   def total_energy
-    gas + oil + electricity
+    gas + oil + (electricity * 3413)
   end
 
   GPAS = {

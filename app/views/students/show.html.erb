@@ -13,13 +13,13 @@ My Transcript
 		<ul class="stats-current stat-numbers">
 			<li id="stat-gas stat-<%= @student.gas %>" class="expandable">
 				<!-- personal Gas usage stats -->
-				Gas: <span class="stat"><%= @student.gas %></span></li>
+        Gas: <span class="stat"><%= number_with_delimiter @student.gas %> cu. ft</span></li>
 			<li id="stat-electricity stat-<%= @student.electricity %>" class="expandable">
 				<!-- personal Electricity usage stats -->
-				Electricity: <span class="stat"><%= @student.electricity %></span> </li>
+				Electricity: <span class="stat"><%= number_with_delimiter @student.electricity %> kWhs</span> </li>
 			<li id="stat-oil stat-<%= @student.oil %>" class="expandable">
 				<!-- personal Oil usage stats -->
-				Oil: <span class="stat"><%= @student.oil %></span> </li>
+				Oil: <span class="stat"><%= number_with_delimiter @student.oil %> Liters</span> </li>
 		</ul>
 	</div>
   <%= link_to 'Download from Tendril', tendrils_show_path %>
