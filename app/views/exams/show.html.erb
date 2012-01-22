@@ -1,4 +1,5 @@
 <% content_for :title do %>My Exam Stats<% end %>
+<div class="blurb">
 <p id="notice"><%= notice %></p>
 
 <section style="margin: 20px 30%">
@@ -21,3 +22,4 @@
 
   <p> <b>Pencils down at:</b> <%= @exam.pencils_down_at.to_formatted_s(:short) %> </p>
 </section>
+</div>
