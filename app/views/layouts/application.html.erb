@@ -2,50 +2,49 @@
 <html>
 <head>
 <title>Energy GPA:<%= page_title %></title>
-
 <%= stylesheet_link_tag "960grid/reset", :media => "all" %>
 <%= stylesheet_link_tag "960grid/960", :media => "all" %>
-<%= stylesheet_link_tag "960grid/text", :media => "all" %>
-
+<!--<%= stylesheet_link_tag "960grid/text", :media => "all" %>-->
 <%= stylesheet_link_tag "fonts/Magenta/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/ArmWrestler/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/bebas-neue/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/Bebas/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/Qlassik-Medium/stylesheet", :media => "all" %>
-
 <%= stylesheet_link_tag "application", :media => "all" %>
-
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 </head>
-<body>
-<div id="container" class="container_16 clearfix">
-	<header>
-		<div id="logo"><img src="/images/logo.png" /></div>
+<body class="blue <%= page_title %>">
+<div id="container" class="container_16 clearfix white">
+	<header class="green">
+		<div id="logo"><a href="<%= page_path('home')%>"><img src="<%= image_path('logo.png') %>" alt="logo" /></a></div>
 		<!-- <div id="search"><form><input type="text" name="search-terms"/></form></div> -->
 		<nav>
-			<ul id="nav">
-        <% if current_student %>
-          <li><img id="avatar-sm" src="<%= current_student.avatar.url(:small) %>" alt="<%= current_student.name %>" /><%= current_student.name %>
-            <ul class="nav subnav shortcuts">
-              <li><%= link_to 'My Profile', current_student %></li>
-              <li><%= link_to 'My Exams', student_exams_path(current_student) %></li>
-              <li><%= link_to 'Logout', destroy_student_session_path %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to 'Log in', new_student_session_path %></li>
-        <% end %>
-        <li><%= link_to 'Exams', exams_path %></li>
-        <li><%= link_to 'Help', page_path('help') %></li>
+			<ul class="nav">
+				<% if current_student %>
+					<li><img class="avatar-sm" src="<%= current_student.avatar.url(:small) %>" alt="<%= current_student.name %>" />
+						<h4 class="student-name"><%= current_student.name %></h4>
+						<ul class="nav subnav shortcuts white">
+							<li><%= link_to 'My Profile', current_student %></li>
+							<li><%= link_to 'My Exams', student_exams_path(current_student) %></li>
+							<li><%= link_to 'Logout', destroy_student_session_path %></li>
+						</ul>
+					</li>
+				<% else %>
+					<li><%= link_to 'Log in', new_student_session_path %></li>
+				<% end %>
+				<li><%= link_to 'Exams', exams_path %></li>
+				<li><%= link_to 'Help', page_path('help') %></li>
 			</ul>
 		</nav>
 	</header>
-	<div id="main"> <%= yield %> </div>
-	<footer>
-		<p>&copy; 2011 Energy GPA</p>
-    <p><%= link_to 'terms of use', page_path('terms_of_use') %></a></p>
-    <p><%= link_to 'Contact Information', page_path('contact_information') %></p>
+	<div id="main white"> <%= yield %> </div>
+	<footer class="orange center">
+		<ul class="nav footer-nav">
+			<li>&copy; 2012 Energy GPA</li>
+			<li><%= link_to 'Terms of Use', page_path('terms_of_use') %></a></li>
+			<li><%= link_to 'Contact Information', page_path('contact_information') %></li>
+		</ul>
 	</footer>
 </div>
 </body>
