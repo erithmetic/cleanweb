@@ -13,3 +13,27 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+app/assets/stylesheets/fonts/bebas-neue/demo.html
+
+app/assets/stylesheets/fonts/bebas-neue/Dharma Type Font License.txt
+
+app/assets/stylesheets/fonts/Qlassik-Medium/demo.html
+
+.gitignore
+
+app/assets/stylesheets/fonts/Qlassik-Medium/Dimitri Castrigue License.txt
+
+app/assets/stylesheets/fonts/Magenta/demo.html
+
+app/assets/stylesheets/fonts/Magenta/BambooTypes Font License.txt
+
+app/assets/stylesheets/fonts/Bebas/demo.html
+
+app/assets/stylesheets/fonts/Bebas/Flat-it License.txt
+
+app/assets/stylesheets/fonts/ArmWrestler/demo.html
+
+app/assets/stylesheets/fonts/ArmWrestler/AJ Paglia Font License.txt
+
+.gitignore
