@@ -64,6 +64,9 @@ header {
 	top:10px;
 	left:10px;
 }
+.nav span.student-name{
+	font: 22px/32px 'BebasRegular', Arial, sans-serif;
+}
 #footer{
 	padding:5px 0 0 0;
 }
@@ -123,7 +126,7 @@ li:hover img.avatar-sm {
 }
 .subnav {
 	position:absolute;
-	top:0;
+	top:5px;
 	left:0;
 	display:none;
 	visibility:collapse;
@@ -151,6 +154,11 @@ span.stat-title{
 }
 span.main-stat{
 	color:red;
+}
+/*--------login----------*/
+div.login{}
+li.input{
+	list-style:none;
 }
 /*-------gradients-------*/
 .white, .subnav li:hover {

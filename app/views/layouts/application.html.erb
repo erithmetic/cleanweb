@@ -32,7 +32,7 @@
 			<ul class="nav">
 				<% if current_student %>
 					<li><img class="avatar-sm" src="<%= current_student.avatar.url(:small) %>" alt="<%= current_student.name %>" />
-						<h4 class="student-name"><%= current_student.name %></h4>
+						<span class="student-name"><%= current_student.name %></span>
 						<ul class="nav subnav shortcuts white" >
 							<li><%= link_to 'My Profile', current_student %></li>
 							<li><%= link_to 'My Exams', student_exams_path(current_student) %></li>

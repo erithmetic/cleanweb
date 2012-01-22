@@ -1,3 +1,5 @@
+<% content_for :title do %>Please Login<% end %>
+<div class="blurb login form">
 <%= semantic_form_for(@student) do |f| %>
   <%= f.inputs :name, :avatar %>
 
@@ -9,3 +11,4 @@
 
   <%= f.buttons %>
 <% end %>
+</div>
