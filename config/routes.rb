@@ -1,4 +1,6 @@
 Cleanweb::Application.routes.draw do
+  resources :exams
+
   devise_for :students
   resources :students
 

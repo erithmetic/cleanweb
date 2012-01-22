@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Winner:</b>
+  <%= @exam.winner_id %>
+</p>
+
+<p>
+  <b>Pencils down at:</b>
+  <%= @exam.pencils_down_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_exam_path(@exam) %> |
+<%= link_to 'Back', exams_path %>
