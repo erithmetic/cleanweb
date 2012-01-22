@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Student.delete_all
+Address.delete_all
+Reading.delete_all
 
 gates = Student.create :name => 'Bill Gates', :email => 'bill@gates.com', :celebrity => true, :password => 'testtest', :password_confirmation => 'testtest'
 gates.addresses.create :street => '1835 73rd Ave NE', :city => 'Medina', :state => 'WA', :zip => 98039,
@@ -22,3 +25,6 @@ dick.addresses.create :street => '123 Main St', :city => 'Jackson', :state => 'W
 
 derek = Student.create :name => 'Derek Kastner', :email => 'dkastner@gmail.com', :password => 'testtest', :password_confirmation => 'testtest'
 derek.addresses.create :street => '616 Westmoreland Ave', :city => 'Lansing', :state => 'MI', :zip => 48915
+
+
+andrew = Student.create :name => 'Andrew Wood', :email => 'andrew.wood@tendril.com', :password => 'password', :password_confirmation => 'password', :tendril_key => '3ddb92142d3d9d2a1fd255152013e59a'
