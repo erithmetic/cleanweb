@@ -14,7 +14,7 @@
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 </head>
-<body class="blue page_id">
+<body class="blue page_id <%= current_student ? 'logged_in' : '' %>">
 <div id="container" class="container_16 clearfix white">
 	<header class="green">
 		<div id="logo"><a href="<%= page_path('home')%>"><img src="<%= image_path('logo.png') %>" alt="logo" /></a></div>
