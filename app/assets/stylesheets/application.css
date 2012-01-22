@@ -67,6 +67,9 @@ body.home #logo, body.home h1, body.sign_in h1 {
 .boxes {
 	padding:72px 0 0 0;
 }
+.blurb{
+	padding:10px 30px 30px 30px;
+}
 /*----------navigation--------------*/
 .nav, .nav * {
 	padding:0;
