@@ -1,0 +1,283 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.tendrilinc.com/oauth/token
+    body: grant_type=authorization_code&code=c105ddf1ee59e95ce3905a71db7c827d&client_id=a8e92ec5cbe6e32f34c976bd1d29967e&client_secret=dde42d000c6317e3928d58d2b0693c99&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fstudents%2Fauth%2Ftendril%2Fcallback
+    headers:
+      content-type:
+      - application/x-www-form-urlencoded
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+      connection:
+      - close
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      date:
+      - Sun, 22 Jan 2012 18:02:02 GMT
+      x-powered-by:
+      - Express
+      content-type:
+      - text/plain; charset=UTF-8
+      set-cookie:
+      - connect.sid=rw67l5QelYVxJFABrBCSAzt7.NpniAwJV8qCbgmX7vmqDdfn%2BzCa5uFHxtwPmpaXDL6Y;
+        path=/; expires=Sun, 22 Jan 2012 22:02:02 GMT; httpOnly
+      via:
+      - 1.1 dev.tendrilinc.com
+      vary:
+      - Accept-Encoding
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: Cannot POST /oauth/token
+    http_version: '1.1'
+  recorded_at: Sun, 22 Jan 2012 18:02:02 GMT
+- request:
+    method: get
+    uri: http://dev.tendrilinc.com/connect/greenbutton?access_token=3ddb92142d3d9d2a1fd255152013e59a
+    body: ''
+    headers:
+      from:
+      - 01/01/2011
+      to:
+      - 01/01/2012
+      authorization:
+      - Token token="3ddb92142d3d9d2a1fd255152013e59a"
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+      connection:
+      - close
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 22 Jan 2012 18:19:30 GMT
+      x-powered-by:
+      - Express
+      - Express
+      content-type:
+      - application/json; charset=utf-8
+      content-disposition:
+      - attachment; filename="Tendril Connect Electric Interval Data Dec 22 2011 to
+        Jan 22 2012"
+      set-cookie:
+      - connect.sid=KB2SOYZZADAbHSmkBOgCm5xV.DPsNQTIpXqH1aEgAWZTr6KUDNOFcb%2Bitq%2FiYVQltOTk;
+        path=/; expires=Sun, 22 Jan 2012 22:19:30 GMT; httpOnly
+      via:
+      - 1.1 dev.tendrilinc.com
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: !binary |-
+      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
+    http_version: '1.1'
+  recorded_at: Sun, 22 Jan 2012 18:19:31 GMT
+- request:
+    method: get
+    uri: http://dev.tendrilinc.com/connect/greenbutton?access_token=3ddb92142d3d9d2a1fd255152013e59a&from=01%2F01%2F2011&resolution=MONTHLY&to=01%2F01%2F2012
+    body: ''
+    headers:
+      authorization:
+      - Token token="3ddb92142d3d9d2a1fd255152013e59a"
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+      connection:
+      - close
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 22 Jan 2012 18:38:39 GMT
+      x-powered-by:
+      - Express
+      - Express
+      content-type:
+      - application/json; charset=utf-8
+      content-disposition:
+      - attachment; filename="Tendril Connect Electric Interval Data Jan 01 2011 to
+        Jan 01 2012"
+      set-cookie:
+      - connect.sid=8Z8kB3E4MLpgrvlRMeEyS9kG.VbSTzULa57c3X4ilKyFQWxkbm8IgmcQLAjDR0YNso%2B0;
+        path=/; expires=Sun, 22 Jan 2012 22:38:39 GMT; httpOnly
+      via:
+      - 1.1 dev.tendrilinc.com
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      content-length:
+      - '753'
+      connection:
+      - close
+    body: !binary |-
+      H4sIAAAAAAAAA52Wy3KbMBSGX4XRGmd0R2KXNF20M530kq46XchGTjTh4mJI
+      JpPxu/cIyxRCHQez8OCD/nM+/ULovCCXoRS1dZm2rctSmyUCa60WS2nswuBk
+      vVguiV1YypdiLRKhJEUxalyTW9Dd2jKrXR59qMrSrproYw6/tVtFn8rG1o8m
+      j65NY6LPpowwiSgmJGqqwV+fq92aO/ujLQpTP6P0Ba3aurZlc+Xy3JV3X23t
+      quzm0daXeQ5ltm2xaVxV+pGb6snWN2uA+NLmjdvkztYoZR6vsNvGFBuUEihQ
+      FShNaIyAp/XUhFGthFZoF4dqK6isOI7Rn9bkrnm+WX+3JoPykIDHaAkstxVM
+      BdREaKEYxngf7hE9UNbWZg/HiGCyGwQcdQMyqhlUgGvXxZp2ewuUPwIlo4Il
+      cv/UBe+u8mr14NMe3P7pnYoOVr0auEXpr5c+NKahCfY0/4c5SMKM93m8g//m
+      NZHF0+Tey2rrRzHJ9/4c/MbgBb3AsPqMSILhDu1+7+KjtJxoOqaVgocas2iD
+      bEjLVTeFnpZyTviYlmCSUCY8cH/3NrBMuBoDKy2pmg8cZPE0+cBerugrYEIh
+      yE9iCk1HryTDRHZv3TzMXhZPkw8wCaVa6wsdLjVyWDOh2Tt89Ws1BOaQ9Azg
+      IIunyQfAYuorI4rJM3yVGis8HzPITvgaduDQTYEpPsNN0OEzMIPsbTclcL12
+      kzEl52MSSg7J52AeZCcWnflv1QUOFx1vqyShav7yE66EVPOBg+zt5ceSHd9W
+      SsmzHE44V2cAB9kJhyU57jCYz/U7HBaj44v51iGhs4EPsniafLjBBJluME3e
+      4atgdIwJ1eYfA70sniYfHgNaTo4BLvuvKoCiel/s9nljfQGzWrVFm3cZr+y9
+      eXQV9EvYpyyKKoO+p+uXMmjZvvk+aN31U/B8nVdP166G3q5jgciDKzN/YsVo
+      c2+2tosdbcf6BszP97KBBnHZdq0U2+3+AkNWK/eBCgAA
+    http_version: '1.1'
+  recorded_at: Sun, 22 Jan 2012 18:38:41 GMT
+recorded_with: VCR 2.0.0.rc1
