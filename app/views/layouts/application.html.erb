@@ -21,23 +21,22 @@
 <body>
 <div id="container" class="container_16 clearfix">
 	<header>
-		<div id="logo"><img src="images/logo.png" /></div>
+		<div id="logo"><img src="/images/logo.png" /></div>
 		<!-- <div id="search"><form><input type="text" name="search-terms"/></form></div> -->
 		<nav>
 			<ul id="nav">
-        <!-- if logged in user -->
         <% if current_student %>
           <li><img id="avatar-sm" src="<%= avatar-sm %>" alt="<%= student_name %>" /><%= student_name %>
             <ul class="nav subnav shortcuts">
               <li><%= link_to 'My Profile', current_student %></li>
-              <li><%= link_to 'My Competitions', '' %></li>
+              <li><%= link_to 'My Exams', student_exams_path(current_student) %></li>
               <li><%= link_to 'Logout', destroy_student_session_path %></li>
             </ul>
           </li>
         <% else %>
           <li><%= link_to 'Log in', new_student_session_path %></li>
         <% end %>
-				<li>Competitions</li>
+        <li><%= link_to 'Exams', exams_path %></li>
         <li><%= link_to 'Help', page_path('help') %></li>
 			</ul>
 		</nav>

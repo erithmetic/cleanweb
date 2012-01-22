@@ -1,6 +1,6 @@
-<h2>Sign in</h2>
+<h2>Log in</h2>
 
-<%= link_to 'Sign in with Facebook', student_omniauth_authorize_path(:facebook) %>
+<%= link_to 'Log in with Facebook', student_omniauth_authorize_path(:facebook) %>
 
 <%= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <%= f.input :email %>
@@ -10,7 +10,7 @@
     <%= f.input :remember_me %>
   <% end -%>
 
-  <%= f.submit "Sign in" %>
+  <%= f.submit "Log in" %>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+<%= render :partial => 'devise/shared/links' %>
