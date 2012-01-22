@@ -66,6 +66,7 @@ body.home #logo, body.home h1, body.sign_in h1 {
 }
 .boxes {
 	padding:72px 0 0 0;
+	color:#3c86ce;
 }
 .blurb{
 	padding:10px 30px 30px 30px;
@@ -128,7 +129,18 @@ li:hover img.avatar-sm {
 }
 /*-----stats----*/
 .stat-numbers li{
+}
+span.stat{
 	font: 68px/72px 'SFSlapstickComicShadedOblique', Arial, sans-serif;
+	color:orange;
+}
+
+span.stat-title{
+	font: 30px/38px 'SFSlapstickComicShadedOblique', Arial, sans-serif;
+	color:green;
+}
+span.main-stat{
+	color:red;
 }
 /*-------gradients-------*/
 .white, .subnav li:hover {
