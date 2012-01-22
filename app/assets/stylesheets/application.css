@@ -11,8 +11,12 @@
  *= require_self
  *= require_tree .
 */
-*, body, p, a {
+*, body, p{
 	font: 18px/27px 'QlassikMediumRegular', Arial, sans-serif;
+	color:#00535b;
+}
+a{
+	color:#ab10d2;
 }
 h1 {
 	font: 68px/72px 'ArmWrestlerBold', Arial, sans-serif;
