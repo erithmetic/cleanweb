@@ -23,10 +23,14 @@ class Tendril
   def self.get_data(student)
     data = Tendril.meter_for(student.tendril_key)
     puts data.inspect
-    address = student.addresses.create :name => 'Meter'
+    address = student.addresses.create :name => 'Meter', :square_footage => 2500
     data['intervalBlock']['intervalBlocks'].each do |interval_block|
       interval_block['intervalReadings'].each do |reading|
-        address.readings.create :amount => reading['value'].to_f,
+        #w = reading['value'].to_f
+        #hours = reading['timePeriod']['duration'].to_f / 60 / 60
+        #kwh = (w / 1000) * hours
+        #Rails.logger.info "#{w}w for #{hours}hrs"
+        address.readings.create :amount => reading['value'].to_f / 1000,
           :read_at => Time.at(reading['timePeriod']['start'].to_i)
       end
     end

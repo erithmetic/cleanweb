@@ -3,6 +3,7 @@
 
   <%= f.semantic_fields_for :addresses, :collection => @addresses do |a| %>
     <%= a.input :name %>
+    <%= a.input :square_footage %>
     <%= a.input :device_id, :label => 'Device ID' %>
     <%= a.inputs :street, :city, :state, :zip %>
   <% end %>

@@ -108,6 +108,40 @@ class Student < ActiveRecord::Base
   end
 
   def electricity
-    addresses.map(&:readings).flatten.sum(&:amount).to_i / 1000
+    addresses.map(&:readings).flatten.sum(&:amount).to_i * 3413
+  end
+
+  def square_footage
+    addresses.sum(&:square_footage)
+  end
+
+  def total_energy
+    gas + oil + electricity
+  end
+
+  GPAS = {
+    (3.0..4.0) => (0..10_000),
+    (2.0..2.9) => (10_000..14_999),
+    (1.0..1.9) => (15_000..19_999),
+    (0.6..0.9) => (20_000..24_999),
+    (0.5..0.7) => (25_000..99_999)
+  }
+
+  def gpa
+    btu_sqf = total_energy / square_footage
+    puts "btu sqf: #{btu_sqf}"
+
+    score = GPAS.find do |score, amount|
+      amount.include?(btu_sqf)
+    end
+    score ||= [(0.5..0.7), (250_000..999_999_999)]
+    puts score.inspect
+    gpa_range = score.first
+    score_range = score.last
+
+    score_ratio = (btu_sqf - score_range.min) / (score_range.max - score_range.min)
+    puts "score ratio: " + score_ratio.inspect
+
+    ((gpa_range.max - gpa_range.min) * score_ratio) + gpa_range.min
   end
 end
