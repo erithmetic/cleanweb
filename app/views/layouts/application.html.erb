@@ -26,7 +26,7 @@
 		<nav>
 			<ul id="nav">
         <% if current_student %>
-          <li><img id="avatar-sm" src="<%= avatar-sm %>" alt="<%= student_name %>" /><%= student_name %>
+          <li><img id="avatar-sm" src="<%= current_student.avatar.url(:small) %>" alt="<%= current_student.name %>" /><%= current_student.name %>
             <ul class="nav subnav shortcuts">
               <li><%= link_to 'My Profile', current_student %></li>
               <li><%= link_to 'My Exams', student_exams_path(current_student) %></li>
