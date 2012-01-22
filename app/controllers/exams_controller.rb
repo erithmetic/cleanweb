@@ -45,6 +45,7 @@ class ExamsController < ApplicationController
   def create
     params[:exam][:pencils_down_at] = Chronic.parse params[:exam][:pencils_down_at]
     @exam = Exam.new(params[:exam])
+    @exam.students << current_student
 
     respond_to do |format|
       if @exam.save

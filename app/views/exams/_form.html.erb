@@ -13,7 +13,7 @@
 
   <%= f.input :pencils_down_at, :as => :string, :hint => 'e.g. "2/13/12" or "next week"', :label => 'Ends on' %>
 
-  <%= f.input :test_takers, :as => :check_boxes, :collection => Student.celebrities %>
+  <%= f.input :student_ids, :as => :check_boxes, :collection => Student.celebrities %>
 
   <%= f.buttons %>
 <% end %>

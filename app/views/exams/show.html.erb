@@ -1,15 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Winner:</b>
-  <%= @exam.winner_id %>
-</p>
+<section style="margin: 20px 30%">
+  <h2>Participants</h2>
+  <% @exam.students.each do |student| %>
+    <div style="float:left; margin: 20px;">
+      <img style="display: block;" src="<%= student.avatar.url(:large) %>">
+      <%= student.name %>
+    </div>
+  <% end %>
+</section>
 
-<p>
-  <b>Pencils down at:</b>
-  <%= @exam.pencils_down_at %>
-</p>
+<section style="clear: both;">
+  <% if @exam.winner_id %>
+    <p>
+      <b>Winner:</b>
+      <%= @exam.winner %>
+    </p>
+  <% end %>
 
-
-<%= link_to 'Edit', edit_exam_path(@exam) %> |
-<%= link_to 'Back', exams_path %>
+  <p> <b>Pencils down at:</b> <%= @exam.pencils_down_at.to_formatted_s(:short) %> </p>
+</section>
