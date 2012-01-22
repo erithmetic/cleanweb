@@ -12,6 +12,7 @@ class Student::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def tendril
+    puts request.env['omniauth.auth'].inspect
     @student = Student.find_for_tendril_oauth(request.env["omniauth.auth"], current_student)
 
     if @student.persisted?
@@ -21,5 +22,10 @@ class Student::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.tendril_data"] = request.env["omniauth.auth"]
       redirect_to new_student_registration_url
     end
+  end
+
+  def failure
+    puts "I DIED #{params.inspect}"
+    puts request.env.inspect
   end
 end

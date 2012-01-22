@@ -76,10 +76,16 @@ class Student < ActiveRecord::Base
 
   def self.find_for_tendril_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
+    puts data.inspect
     if student = Student.where(:email => data.email).first
+      student.tendril_key = request.env['omniauth.auth']['client_id']
+      student.tendril_secret = request.env['omniauth.auth']['client_secret']
       student
     else
-      Student.create!(:email => data.email, :password => Devise.friendly_token[0,20]) 
+      Student.create!(:email => data.email, :password => Devise.friendly_token[0,20],
+        :tendril_key => data['client_id'],
+        :tendril_secret => data['client_secret']
+                     ) 
     end
   end
 
@@ -102,6 +108,39 @@ class Student < ActiveRecord::Base
   end
 
   def electricity
-    1035
+    addresses.map(&:readings).flatten.sum(&:amount).to_i
+  end
+
+  def square_footage
+    addresses.sum(&:square_footage)
+  end
+
+  def total_energy
+    gas + oil + (electricity * 3413)
+  end
+
+  GPAS = {
+    (3.0..4.0) => (0..10_000),
+    (2.0..2.9) => (10_000..14_999),
+    (1.0..1.9) => (15_000..19_999),
+    (0.6..0.9) => (20_000..24_999),
+    (0.5..0.7) => (25_000..99_999)
+  }
+
+  def gpa
+    if square_footage > 0
+      btu_sqf = total_energy / square_footage
+
+      score = GPAS.find do |score, amount|
+        amount.include?(btu_sqf)
+      end
+      score ||= [(0.5..0.7), (250_000..999_999_999)]
+      gpa_range = score.first
+      score_range = score.last
+
+      score_ratio = (btu_sqf - score_range.min) / (score_range.max - score_range.min)
+
+      ((gpa_range.max - gpa_range.min) * score_ratio) + gpa_range.min
+    end
   end
 end

@@ -1,5 +1,6 @@
-<h1>New exam</h1>
-
+<% content_for :title do %>Create New Exam<% end %>
+<div class="blurb">
 <%= render 'form' %>
 
 <%= link_to 'Back', exams_path %>
+</div>

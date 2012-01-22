@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Energy GPA:<%= page_title %></title>
+<title>Energy GPA<%= (': ' + yield(:title)) || '' %></title>
 <%= stylesheet_link_tag "960grid/reset", :media => "all" %>
 <%= stylesheet_link_tag "960grid/960", :media => "all" %>
 <!--<%= stylesheet_link_tag "960grid/text", :media => "all" %>-->
+
+	<%= javascript_include_tag "excanvas" %>
+	<%= javascript_include_tag "visualize.jQuery" %>
+	<%= javascript_include_tag "stats" %>
+	<%= stylesheet_link_tag "visualize/visualize", :media => "all" %>
+	<%= stylesheet_link_tag "visualize/visualize-dark", :media => "all" %>
+
+<%= stylesheet_link_tag "fonts/slapstick/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/Magenta/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/ArmWrestler/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/bebas-neue/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/Bebas/stylesheet", :media => "all" %>
 <%= stylesheet_link_tag "fonts/Qlassik-Medium/stylesheet", :media => "all" %>
+
 <%= stylesheet_link_tag "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 </head>
-<body class="blue page_id <%= current_student ? 'logged_in' : '' %>">
-<div id="container" class="container_16 clearfix white">
+<body class="blue <%= current_student ? 'logged_in' : '' %> <%= params[:id] %> '' %>">
+<div id="container" class="container_16 clearfix white" style="width:960px;">
 	<header class="green">
 		<div id="logo"><a href="<%= page_path('home')%>"><img src="<%= image_path('logo.png') %>" alt="logo" /></a></div>
 		<!-- <div id="search"><form><input type="text" name="search-terms"/></form></div> -->
@@ -23,7 +32,7 @@
 			<ul class="nav">
 				<% if current_student %>
 					<li><img class="avatar-sm" src="<%= current_student.avatar.url(:small) %>" alt="<%= current_student.name %>" />
-						<h4 class="student-name"><%= current_student.name %></h4>
+						<span class="student-name"><%= current_student.name %></span>
 						<ul class="nav subnav shortcuts white" >
 							<li><%= link_to 'My Profile', current_student %></li>
 							<li><%= link_to 'My Exams', student_exams_path(current_student) %></li>
@@ -34,20 +43,25 @@
 					<li><%= link_to 'Log in', new_student_session_path %></li>
 				<% end %>
 				<li><%= link_to 'Exams', exams_path %></li>
+				<li><%= link_to 'About', page_path('about') %></a></li>
 				<li><%= link_to 'Help', page_path('help') %></li>
 			</ul>
 		</nav>
 	</header>
+	<br clear="all" />
 	<div id="main white"  style="background:url(<%= image_path('dots.png') %>) top left repeat-x;">
-		<h1><%= page_title %></h1>
+		<h1><%= yield(:title) || '' %></h1>
 		<%= yield %>
 	</div>
-	<footer class="orange center">
+	<br clear="all" />
+	<footer>
+	<div id="footer" class="orange center">
 		<ul class="nav footer-nav">
-			<li>&copy; 2012 Energy GPA</li>
+			<li>&copy; 2012 Clean GPA</li>
 			<li><%= link_to 'Terms of Use', page_path('terms_of_use') %></a></li>
 			<li><%= link_to 'Contact Information', page_path('contact_information') %></li>
 		</ul>
+	</div>
 	</footer>
 </div>
 </body>

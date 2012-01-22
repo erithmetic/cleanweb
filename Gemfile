@@ -4,15 +4,18 @@ gem 'rails', '3.2.0'
 
 gem 'aws-sdk'
 gem 'chronic'
-gem 'crack'
 gem 'devise'
 gem 'draper'
+gem 'fakeweb'
+gem 'faraday', '~> 0.6.0'
+gem 'faraday_middleware'
 gem 'formtastic'
 gem 'high_voltage'
 gem 'oauth'
 gem 'omniauth-facebook'
-gem 'omniauth-oauth'
+gem 'omniauth-oauth2'
 gem 'paperclip'
+gem 'vcr', '~> 2.0.0.rc1'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -46,7 +49,6 @@ group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'fakeweb'
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-cucumber'
@@ -54,5 +56,5 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'sqlite3'
-  gem 'vcr', '~> 2.0.0.rc1'
+  #gem 'vcr', '~> 2.0.0.rc1'
 end

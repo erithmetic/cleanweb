@@ -1,4 +1,8 @@
+<% content_for :title do %>My Exam Stats<% end %>
+<div class="blurb">
 <p id="notice"><%= notice %></p>
+
+<p><%= link_to 'Back to all my Exams', student_exams_path(current_student) %></p>
 
 <section style="margin: 20px 30%">
   <h2>Participants</h2>
@@ -10,7 +14,7 @@
   <% end %>
 </section>
 
-<section style="clear: both;">
+<section style="clear: both;" class="winner">
   <% if @exam.winner_id %>
     <p>
       <b>Winner:</b>
@@ -20,3 +24,4 @@
 
   <p> <b>Pencils down at:</b> <%= @exam.pencils_down_at.to_formatted_s(:short) %> </p>
 </section>
+</div>

@@ -1,80 +1,73 @@
-<!--
-	<script type="text/javascript" src="http://filamentgroup.github.com/EnhanceJS/enhance.js"></script>	
-	-->
-	<%= javascript_include_tag "excanvas" %>
-	<%= javascript_include_tag "visualize.jQuery" %>
-	<%= javascript_include_tag "stats" %>
-	<%= stylesheet_link_tag "visualize/visualize", :media => "all" %>
-	<%= stylesheet_link_tag "visualize/visualize-dark", :media => "all" %>
-<h3>Welcome <%= @student.name %>!</h3>
-<div id="student-info"  class="box">
-	<div class="left"><img id="avatar" src="<%= @student.avatar.url(:small) %>" /></div>
-		<ul class="stats">
-		<li id="stat-gas stat-<%= @student.gas %>" class="expandable">
-			<!-- personal Gas usage stats -->
-		</li>
-		<li id="stat-electricity stat-<%= @student.electricity %>" class="expandable">
-			<!-- personal Electricity usage stats -->
-		</li>
-		<li id="stat-oil stat-<%= @student.oil %>" class="expandable">
-			<!-- personal Oil usage stats -->
-		</li>
-	</ul>
+<% content_for :title do %>
+
+<%= @student.name %>'s Transcript
+<% end %>
+<div class="blurb">
+	<h4>Welcome <%= @student.name %>!</h4>
+	<div id="student-info"  class="box">
+		<div class="left"><a 
+		href="<%= edit_student_path(@student) %>"><img 
+		id="avatar" src="<%= @student.avatar.url(:small) %>" /></a><br />
+			<%= link_to 'Edit', edit_student_path(@student) %><br />
+      <span class="stat-title">Your GPA</span><br /> <span class="stat main-stat"><%= @student.gpa ? number_with_precision(@student.gpa, :precision => 2) : 'N/A' %></span></div>
+		<ul class="stats-current stat-numbers">
+			<li id="stat-gas stat-<%= @student.gas %>" class="expandable">
+				<!-- personal Gas usage stats -->
+        Gas: <span class="stat"><%= number_with_delimiter @student.gas %> cu. ft</span></li>
+			<li id="stat-electricity stat-<%= @student.electricity %>" class="expandable">
+				<!-- personal Electricity usage stats -->
+				Electricity: <span class="stat"><%= number_with_delimiter @student.electricity %> kWhs</span> </li>
+			<li id="stat-oil stat-<%= @student.oil %>" class="expandable">
+				<!-- personal Oil usage stats -->
+				Oil: <span class="stat"><%= number_with_delimiter @student.oil %> Liters</span> </li>
+		</ul>
+		<br clear="all" />
+	</div>
+  <%= link_to 'Download from Tendril', tendrils_show_path %>
+	<table  class="stats">
+		<caption>
+		Friends Energy Usage
+		</caption>
+		<thead>
+			<tr>
+				<td></td>
+				<th scope="col">Electricity</th>
+				<th scope="col">Gas</th>
+				<th scope="col">Oil</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row"><%= @student.name %> (me!)</th>
+				<td><%= @student.electricity %></td>
+				<td><%= @student.gas %></td>
+				<td><%= @student.oil %></td>
+			</tr>
+			<tr>
+				<th scope="row">Mary</th>
+				<td>1901</td>
+				<td>1602</td>
+				<td>403</td>
+			</tr>
+			<tr>
+				<th scope="row">Tom</th>
+				<td>3155</td>
+				<td>4033</td>
+				<td>3044</td>
+			</tr>
+			<tr>
+				<th scope="row">Brad</th>
+				<td>1088</td>
+				<td>1803</td>
+				<td>1022</td>
+			</tr>
+			<tr>
+				<th scope="row">Kate</th>
+				<td>4022</td>
+				<td>8022</td>
+				<td>9022</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
-
-<table  class="stats">
-	<caption>Sample stats</caption>
-	<thead>
-		<tr>
-			<td></td>
-			<th scope="col">food</th>
-			<th scope="col">auto</th>
-			<th scope="col">household</th>
-			<th scope="col">furniture</th>
-			<th scope="col">kitchen</th>
-			<th scope="col">bath</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row">Mary</th>
-			<td>190</td>
-			<td>160</td>
-			<td>40</td>
-			<td>120</td>
-			<td>30</td>
-			<td>70</td>
-		</tr>
-		<tr>
-			<th scope="row">Tom</th>
-			<td>3</td>
-			<td>40</td>
-			<td>30</td>
-			<td>45</td>
-			<td>35</td>
-			<td>49</td>
-		</tr>
-		<tr>
-			<th scope="row">Brad</th>
-			<td>10</td>
-			<td>180</td>
-			<td>10</td>
-			<td>85</td>
-			<td>25</td>
-			<td>79</td>
-		</tr>
-		<tr>
-			<th scope="row">Kate</th>
-			<td>40</td>
-			<td>80</td>
-			<td>90</td>
-			<td>25</td>
-			<td>15</td>
-			<td>119</td>
-		</tr>		
-	</tbody>
-</table>	
-
 <div id="suggestions"> </div>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |

@@ -11,15 +11,19 @@
  *= require_self
  *= require_tree .
 */
-*, body, p, a {
+*, body, p{
 	font: 18px/27px 'QlassikMediumRegular', Arial, sans-serif;
+	color:#00535b;
+}
+a{
+	color:#ab10d2;
 }
 h1 {
 	font: 68px/72px 'ArmWrestlerBold', Arial, sans-serif;
 	text-align:center;
 }
 h2 {
-	font: 60px/68px 'MirageRegular', Arial, sans-serif;
+	font: 60px/68px 'ArmWrestlerBold','MirageRegular', Arial, sans-serif;
 	letter-spacing: 0;
 	text-align:center;
 }
@@ -28,7 +32,7 @@ h3 {
 	letter-spacing: 0;
 	text-align:center;
 }
-h4{
+h4 {
 	font: 22px/32px 'BebasRegular', Arial, sans-serif;
 }
 header {
@@ -43,21 +47,42 @@ header {
 #container {
 	position:relative;
 	padding:50px 0 0 0;
+	margin-left: auto;
+	margin-right: auto;
+	clear:both;
+	width: 960px;
 }
-#main{
+#main {
 	padding:20px 36px 36px 36px;
+	margin-left: auto;
+	margin-right: auto;
+	clear:both;
+	width: 960px;
 }
 #logo {
 	position:absolute;
 	top:10px;
 	left:10px;
 }
-body.home #logo, body.home h1 {
+.nav span.student-name{
+	font: 22px/32px 'BebasRegular', Arial, sans-serif;
+}
+#footer{
+	padding:5px 0 0 0;
+}
+body.home #logo, body.home h1, body.sign_in h1 {
 	display:none;
 	visibility:collapse;
 }
 .boxes {
 	padding:72px 0 0 0;
+	color:#3c86ce;
+}
+.boxes li{
+	padding:215px 0 0 0;
+}
+.blurb{
+	padding:10px 30px 30px 30px;
 }
 /*----------navigation--------------*/
 .nav, .nav * {
@@ -101,7 +126,7 @@ li:hover img.avatar-sm {
 }
 .subnav {
 	position:absolute;
-	top:0;
+	top:5px;
 	left:0;
 	display:none;
 	visibility:collapse;
@@ -114,6 +139,40 @@ li:hover img.avatar-sm {
 .nav li:hover .subnav li {
 	float:none;
 	display:block;
+}
+.box{
+	background:#fff;
+	border:#2DB1ED 5px solid;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding:40px;
+	margin:5px 30px;
+}
+/*-----stats----*/
+.stat-numbers{
+	float:right;
+}
+.stat-numbers li{
+	font: 22px/32px 'BebasRegular', Arial, sans-serif;
+	padding:5px 10px;
+}
+span.stat{
+	font: 50px/60px 'SFSlapstickComicShadedOblique', Arial, sans-serif;
+	color:orange;
+}
+
+span.stat-title{
+	font: 30px/38px 'SFSlapstickComicShadedOblique', Arial, sans-serif;
+	color:green;
+}
+span.main-stat{
+	color:red;
+	font: 68px/72px 'SFSlapstickComicShadedOblique', Arial, sans-serif;
+}
+/*--------login----------*/
+div.login{}
+li.input{
+	list-style:none;
 }
 /*-------gradients-------*/
 .white, .subnav li:hover {

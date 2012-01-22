@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120122150457) do
+ActiveRecord::Schema.define(:version => 20120122190646) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "student_id"
@@ -19,11 +19,12 @@ ActiveRecord::Schema.define(:version => 20120122150457) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.float    "gpa"
     t.string   "name"
     t.string   "device_id"
+    t.float    "square_footage"
   end
 
   create_table "exams", :force => true do |t|
@@ -31,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20120122150457) do
     t.datetime "pencils_down_at"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "readings", :force => true do |t|
+    t.integer  "address_id"
+    t.float    "amount"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.datetime "read_at"
   end
 
   create_table "students", :force => true do |t|
@@ -56,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20120122150457) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "celebrity"
+    t.string   "tendril_key"
   end
 
   create_table "test_takers", :force => true do |t|

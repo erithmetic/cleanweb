@@ -8,5 +8,7 @@ Cleanweb::Application.routes.draw do
     resources :exams
   end
 
+  get '/tendrils/show', :to => 'tendrils#show'
+
   root :to => 'high_voltage/pages#show', :id => 'home'
 end
