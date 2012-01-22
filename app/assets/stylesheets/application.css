@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
 */
+* {
+	font: 18px/27px 'QlassikMediumRegular', Arial, sans-serif;
+}
+h1 {
+	font: 18px/27px 'ArmWrestlerBold', Arial, sans-serif;
+}
+h2 {
+	font: 60px/68px 'MirageRegular', Arial, sans-serif;
+	letter-spacing: 0;
+}
+h3 {
+	font: 60px/68px 'BebasNeueRegular', Arial, sans-serif;
+	letter-spacing: 0;
+}
